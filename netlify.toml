@@ -1,10 +1,8 @@
 [build]
 
 # This command builds the site
-command = "npm run build"
+command = "npm run bundle"
 
-# This is the directory that will be published
-publish = "build"
 
 # This is where our functions are located
 functions = "functions"
