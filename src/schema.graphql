@@ -1,0 +1,42 @@
+scalar GraphQLDate
+
+enum EventCatType {
+    Education
+    Wedding
+    Party
+    Religious
+}
+
+type Events {
+    owner: String!
+    id : Int!
+    name : String!
+    startDate : GraphQLDate!
+    endDate : GraphQLDate!
+    PopulationRange : Int!
+    eventCat : EventCatType!
+    isDestroyed : Boolean
+    totalReg : Int!
+    isVerified: Boolean
+    Strict: Boolean
+}
+
+input EventInputs {
+    owner: String!
+    name: String!
+    startDate: GraphQLDate
+    endDate: GraphQLDate!
+    PopulationRange: Int!
+    eventCat: EventCatType = Party
+}
+
+type Query {
+    """
+    Pour all info about different events on the CUPCAKE page
+    """
+    eventListed : [Events!]!
+}
+
+type Mutation {
+    AddEvent(event: EventInputs!) : Events!
+}

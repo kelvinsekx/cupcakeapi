@@ -1,0 +1,27 @@
+{
+  "name": "cakeapi",
+  "version": "1.0.0",
+  "description": "Backend API for cupcake web app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -w src -e js,graphql src/index.js",
+    "bundle": "cpx src/**/* functions/bundle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kelvinsekx",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.16.0",
+    "apollo-server-express": "^2.15.0",
+    "apollo-server-lambda": "^2.16.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql": "^15.1.0",
+    "nodemon": "^2.0.4",
+    "serverless-http": "^2.5.0"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0"
+  },
+  "keywords": []
+}
