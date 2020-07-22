@@ -163,7 +163,7 @@ function productionServer(){
 
 function localServer(){
   return new ApolloServer({
-    typeDefs: fs.readFileSync("./schemas.graphql", "utf-8"),
+    typeDefs: fs.readFileSync("schemas.graphql", "utf-8"),
     resolvers,
     introspection: true,
     playground: true,
