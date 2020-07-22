@@ -149,7 +149,7 @@ const resolvers = {
 function author(parent, { id }) {
   return Author[id];
 }
-const productionServer = () => {
+function productionServer(){
   return new ApolloServerLampda({
     typeDefs: fs.readFileSync("./src/schemas.graphql", "utf-8"),
     resolvers,
@@ -172,11 +172,6 @@ function localServer(){
     },
   });
 };
-
- const app = express();
-
- app.use(cors());
-//module.exports.handler = serverless(app);
 
 
 module.exports = {localServer, productionServer}
