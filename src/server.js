@@ -9,6 +9,8 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server");
 const ApolloServerLampda = require("apollo-server-lambda").ApolloServer;
 
+const {typeDefs} = require("./schemas")
+
 const { GraphQLScalarType } = require("graphql");
 const { Kind } = require("graphql/language");
 
@@ -150,7 +152,7 @@ function author(parent, { id }) {
 }
 function productionServer(){
   return new ApolloServerLampda({
-    typeDefs: fs.readFileSync("./src/schemas.graphql", "utf-8"),
+    typeDefs,
     resolvers,
     introspection: true,
     playground: true,
@@ -162,7 +164,7 @@ function productionServer(){
 
 function localServer(){
   return new ApolloServer({
-    typeDefs: fs.readFileSync("./src/schemas.graphql", "utf-8"),
+    typeDefs,
     resolvers,
     introspection: true,
     playground: true,

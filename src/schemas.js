@@ -1,3 +1,7 @@
+const { gql } = require('apollo-server-lambda');
+
+
+const typeDefs = gql`
 enum EventCatType {
     Education
     Wedding
@@ -48,4 +52,6 @@ type Mutation {
   ): Event!
   
   deleteMessage(id: ID!): Boolean!
-}
+}`
+
+module.exports= {typeDefs}
